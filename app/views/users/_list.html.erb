@@ -1,0 +1,27 @@
+      <div>
+        <h2>User info</h2>
+        <%= image_tag user.get_profile_image(100,100) %> 
+        <table>
+          <tr>
+            <th>name</th>
+            <!--ユーザー名の切り替えについては要確認-->
+            <td><%= user.name %></td>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <td></td>
+          </tr>
+        </table>
+        <p><%= link_to"編集", edit_user_path %></p>
+      </div>
+      
+      <div>
+        <h2>New Book</h2>
+        <%= form_with model: book do |f| %>
+          <p>Title</p>
+            <%= f.text_field :title %>
+          <p>Opinion</p>
+            <%= f.text_area :body %>
+          <%= f.submit 'Create Book' %>
+        <% end %>
+      </div>
