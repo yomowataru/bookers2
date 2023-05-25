@@ -9,10 +9,10 @@
           </tr>
           <tr>
             <th>introduction</th>
-            <td></td>
+            <td><%= user.introduction %></td>
           </tr>
         </table>
-        <p><%= link_to"編集", edit_user_path %></p>
+        <p><%= link_to"編集", edit_user_path(current_user) %></p>
       </div>
       
       <div>
