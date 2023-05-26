@@ -5,6 +5,28 @@
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>     </th>
+            <th>title</th>
+            <th>opinion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each do |books| %>
+          <tr>
+            <td><%= image_tag @users.get_profile_image(100,100) %></td>
+            <td>
+              <%= link_to book_path(books.id) do %>
+                <%= books.title %>
+              <% end %>
+            </td>
+            <td><%= books.body %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
