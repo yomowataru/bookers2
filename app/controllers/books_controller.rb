@@ -25,8 +25,10 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.new
-    @user = current_user
+    # @user = current_user
     @books = Book.find(params[:id]) 
+    # @users = @books.user.id
+    @users = User.find_by(id: @books.user_id)
   end
   
   def destroy
