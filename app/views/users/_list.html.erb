@@ -1,7 +1,7 @@
       <div>
         <h2>User info</h2>
         <%= image_tag user.get_profile_image(100,100) %> 
-        <table>
+        <table class="table">
           <tr>
             <th>name</th>
             <!--ユーザー名の切り替えについては要確認-->
@@ -12,16 +12,20 @@
             <td><%= user.introduction %></td>
           </tr>
         </table>
-        <p><%= link_to"編集", edit_user_path(current_user) %></p>
+        <div>
+          <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
+            <i class="fas fa-user-cog"></i>
+          <% end %>
+        </div>
       </div>
       
-      <div>
+      <div class="mt-2">
         <h2>New Book</h2>
         <%= form_with model: book do |f| %>
           <p>Title</p>
             <%= f.text_field :title %>
           <p>Opinion</p>
             <%= f.text_area :body %>
-          <%= f.submit 'Create Book' %>
+          <%= f.submit 'Create Book', class: "btn btn-sm btn-success" %>
         <% end %>
       </div>
