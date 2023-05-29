@@ -13,19 +13,19 @@
           </tr>
         </table>
         <div>
-          <%= link_to edit_user_path(current_user), class: "btn btn-outline-secondary btn-block" do %>
+          <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-block" do %>
             <i class="fas fa-user-cog"></i>
           <% end %>
         </div>
       </div>
       
       <div class="mt-2">
-        <h2>New Book</h2>
+        <h2>New book</h2>
         <%= form_with model: book do |f| %>
           <p>Title</p>
-            <%= f.text_field :title %>
+            <%= f.text_field :title, class: "form-control book_title" %>
           <p>Opinion</p>
-            <%= f.text_area :body %>
+            <%= f.text_area :body, class: "form-control book_body" %>
           <%= f.submit 'Create Book', class: "btn btn-sm btn-success" %>
         <% end %>
       </div>
